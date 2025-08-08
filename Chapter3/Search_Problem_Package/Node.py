@@ -7,3 +7,9 @@ class Node():
 
   def __str__(self):
     return f"|Node|  State: {self.state} | Parent: {self.parent.state if self.parent else None} | Path Cost: {self.path_cost}\n"
+
+  def __eq__(self, value: object) -> bool:
+    return self.state == value.state if isinstance(value, Node) else False
+
+  def __repr__(self):
+    return f"Node({self.state}, cost={self.path_cost})"
