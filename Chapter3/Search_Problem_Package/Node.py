@@ -13,3 +13,12 @@ class Node():
 
   def __repr__(self):
     return f"Node({self.state}, cost={self.path_cost})"
+
+  def get_path(self):
+    path = []
+    current = self
+    while current:
+      path.append(current.state)
+      current = current.parent
+
+    return path[::-1]
