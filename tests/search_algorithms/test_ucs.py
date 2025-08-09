@@ -17,3 +17,12 @@ class TestSameCost():
     result_node = uniform_cost_search(Romania_Search_Problem_Uniform_Cost(initial_state="Arad", goal_state="Giurgiu"))
     list_of_states = result_node.get_path() if result_node else []
     assert list_of_states == ["Arad", "Sibiu", "Fagaras", "Bucharest","Giurgiu"]
+
+  def test_arad_to_arad(self):
+    result_node = uniform_cost_search(Romania_Search_Problem_Uniform_Cost(initial_state="Arad", goal_state="Arad"))
+    list_of_states = result_node.get_path() if result_node else []
+    assert list_of_states == ["Arad"]
+
+  def test_arad_to_nothing(self):
+    result_node = uniform_cost_search(Romania_Search_Problem_Uniform_Cost(initial_state="Arad", goal_state="Nothing"))
+    assert result_node == None
