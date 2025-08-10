@@ -46,4 +46,4 @@ class LIFO_Que(Que):
     return self.que.pop()
 
 # Alias
-stack = LIFO_Que
+Stack = LIFO_Que
