@@ -10,6 +10,7 @@ class Que():
   
   def remove(self, value):
     self.que.remove(value)
+
   def __len__(self):
     return len(self.que)
   
@@ -36,3 +37,13 @@ class Priority_Que(Que):
 
   def pop(self):
     return self.que.pop(0)
+
+class LIFO_Que(Que):
+  def push(self, value):
+    self.que.append(value)
+
+  def pop(self):
+    return self.que.pop()
+
+# Alias
+stack = LIFO_Que
