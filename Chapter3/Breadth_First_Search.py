@@ -6,7 +6,7 @@ from Search_Problem_Package.expand import expand
 
 def breadth_first_search(problem : Search_Problem):
   node = Node(problem.initial_state)
-  if problem.IS_GOAL(node):
+  if problem.IS_GOAL(node.state):
     return node
   
   frontier = FIFO_Que()

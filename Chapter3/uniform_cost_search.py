@@ -8,7 +8,7 @@ def path_cost_evaluation(a : Node, b : Node): # Returns true if a has a bigger p
 
 def uniform_cost_search(problem : Search_Problem):
   node = Node(problem.initial_state)
-  if problem.IS_GOAL(node):
+  if problem.IS_GOAL(node.state):
     return node
   
   frontier = Priority_Que(path_cost_evaluation)
