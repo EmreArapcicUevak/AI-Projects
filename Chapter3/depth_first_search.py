@@ -1,5 +1,5 @@
 
-from Chapter3.Search_Problem_Package.search_problem import Search_Problem
+from Chapter3.Search_Problem_Package.search_problem import *
 from Chapter3.Search_Problem_Package.que import Stack
 from Chapter3.Search_Problem_Package.node import Node
 from Chapter3.Search_Problem_Package.expand import expand
@@ -21,4 +21,4 @@ def depth_first_search(problem : Search_Problem):
       else:
         frontier.push(child)
 
-  return None
+  return SearchStatus.FAILURE

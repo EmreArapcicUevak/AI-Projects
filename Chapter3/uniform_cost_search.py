@@ -1,4 +1,4 @@
-from Chapter3.Search_Problem_Package.search_problem import Search_Problem
+from Chapter3.Search_Problem_Package.search_problem import *
 from Chapter3.Search_Problem_Package.expand import expand
 from Chapter3.Search_Problem_Package.node import Node
 from Chapter3.Search_Problem_Package.que import Priority_Que
@@ -29,19 +29,4 @@ def uniform_cost_search(problem : Search_Problem):
         reached[child.state] = child
         frontier.push(child)
 
-  return None
-
-if __name__ == "__main__":
-  from romania_search_problem import Romania_Search_Problem_Uniform_Cost, Romania_Search_Problem
-
-  arad_to_giurgiu = Romania_Search_Problem(initial_state="Arad", goal_state="Giurgiu")
-  sibiu_to_bucharest = Romania_Search_Problem(initial_state="Sibiu", goal_state="Bucharest")
-
-  result = uniform_cost_search(problem=arad_to_giurgiu)
-
-  if result == None:
-      print("No solution found")
-  else:
-    while result != None:
-      print(result)
-      result = result.parent
+  return SearchStatus.FAILURE

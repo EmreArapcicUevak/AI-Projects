@@ -1,8 +1,7 @@
-from romania_search_problem import Romania_Search_Problem_Uniform_Cost
-from Search_Problem_Package.search_problem import Search_Problem
-from Search_Problem_Package.que import FIFO_Que
-from Search_Problem_Package.node import Node
-from Search_Problem_Package.expand import expand
+from Chapter3.Search_Problem_Package.search_problem import *
+from Chapter3.Search_Problem_Package.que import FIFO_Que
+from Chapter3.Search_Problem_Package.node import Node
+from Chapter3.Search_Problem_Package.expand import expand
 
 def breadth_first_search(problem : Search_Problem):
   node = Node(problem.initial_state)
@@ -24,19 +23,4 @@ def breadth_first_search(problem : Search_Problem):
         reached.append(child.state)
         frontier.push(child)
 
-  return None
-
-
-if __name__ == "__main__":
-  arad_to_giurgiu = Romania_Search_Problem_Uniform_Cost(initial_state="Arad", goal_state="Giurgiu")
-  result = breadth_first_search(problem=arad_to_giurgiu)
-
-  if result == None:
-      print("No solution found")
-  else:
-    while result != None:
-      print(result)
-      result = result.parent
-
-    
-
+  return SearchStatus.FAILURE

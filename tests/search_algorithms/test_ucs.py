@@ -1,4 +1,5 @@
 from Chapter3.uniform_cost_search import uniform_cost_search
+from Chapter3.Search_Problem_Package.search_problem import SearchStatus
 from tests.problems.romania_search_problem import *
 
 class TestSmallestCost():
@@ -25,4 +26,4 @@ class TestSameCost():
 
   def test_arad_to_nothing(self):
     result_node = uniform_cost_search(Romania_Search_Problem_Uniform_Cost(initial_state="Arad", goal_state="Nothing"))
-    assert result_node == None
+    assert result_node == SearchStatus.FAILURE
