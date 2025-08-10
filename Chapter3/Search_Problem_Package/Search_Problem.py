@@ -1,3 +1,9 @@
+from enum import Enum, auto
+
+class SearchStatus(Enum):
+    FAILURE = auto()
+    CUTOFF = auto()
+
 class Search_Problem():
   def __init__(self, initial_state):
     self.initial_state = initial_state
