@@ -3,15 +3,12 @@ from Chapter3.Search_Problem_Package.expand import expand
 from Chapter3.Search_Problem_Package.node import Node
 from Chapter3.Search_Problem_Package.que import Priority_Que
 
-def path_cost_evaluation(a : Node, b : Node): # Returns true if a has a bigger prio then b
-  return a.path_cost < b.path_cost
-
 def uniform_cost_search(problem : Search_Problem):
   node = Node(problem.initial_state)
   if problem.IS_GOAL(node.state):
     return node
   
-  frontier = Priority_Que(path_cost_evaluation)
+  frontier = Priority_Que(lambda node: node.path_cost)
   frontier.push(node)
 
   reached = {problem.initial_state: node}
