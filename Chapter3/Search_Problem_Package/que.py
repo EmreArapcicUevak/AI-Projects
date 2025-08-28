@@ -29,7 +29,7 @@ class Priority_Que(Que):
 
   def push(self, value):
     for index,que_value in enumerate(self.que):
-      if self.evaluation_func(value, que_value):
+      if self.evaluation_func(value) < self.evaluation_func(que_value):
         self.que.insert(index,value)
         return
     
